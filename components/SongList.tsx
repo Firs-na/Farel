@@ -1,32 +1,50 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { songs, genres } from "@/data/songs";
+import { useEffect, useMemo, useState } from "react";
+import { getLagu, API_URL, type Lagu } from "@/lib/api";
 import SearchBox from "./SearchBox";
 import GenreChips from "./GenreChips";
 import SongCard from "./SongCard";
-import { useAmbientAudio } from "@/lib/useAmbientAudio";
+import { useAudioPlayer } from "@/lib/useAudioPlayer";
 
 type Props = {
   initialGenre?: string;
 };
 
 export default function SongList({ initialGenre = "Semua" }: Props) {
+  const [lagu, setLagu] = useState<Lagu[]>([]);
+  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState(initialGenre);
-  const { playingId, toggle } = useAmbientAudio();
+  const { playingId, toggle } = useAudioPlayer();
+
+  useEffect(() => {
+    getLagu().then((data) => {
+      setLagu(data);
+      setLoading(false);
+    });
+  }, []);
+
+  const genres = useMemo(() => {
+    const unique = Array.from(new Set(lagu.map((l) => l.genre)));
+    return ["Semua", ...unique];
+  }, [lagu]);
 
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase();
-    return songs.filter((s) => {
+    return lagu.filter((s) => {
       const matchGenre = genre === "Semua" || s.genre === genre;
       const matchSearch =
         !term ||
-        s.title.toLowerCase().includes(term) ||
+        s.nama.toLowerCase().includes(term) ||
         s.genre.toLowerCase().includes(term);
       return matchGenre && matchSearch;
     });
-  }, [search, genre]);
+  }, [search, genre, lagu]);
+
+  if (loading) {
+    return <p className="text-sm text-inkSoft">Memuat daftar lagu...</p>;
+  }
 
   return (
     <div>
@@ -41,7 +59,7 @@ export default function SongList({ initialGenre = "Semua" }: Props) {
             key={song.id}
             song={song}
             isPlaying={playingId === song.id}
-            onToggle={toggle}
+            onToggle={() => toggle(song.id, `${API_URL}/storage/${song.file}`)}
           />
         ))}
       </div>
@@ -51,12 +69,6 @@ export default function SongList({ initialGenre = "Semua" }: Props) {
           Tidak ada lagu yang cocok. Coba kata kunci lain.
         </div>
       )}
-
-      <p className="mt-4 text-xs text-inkSoft">
-        Catatan: pemutaran di sini adalah nada ambient contoh yang dihasilkan
-        langsung oleh browser, bukan rekaman lagu asli — hanya untuk simulasi
-        rasa dari tiap genre.
-      </p>
     </div>
   );
 }

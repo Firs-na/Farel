@@ -1,4 +1,3 @@
-import ReferenceCard from "@/components/ReferenceCard";
 import { references } from "@/data/references";
 
 export default function ReferensiPage() {
@@ -9,14 +8,17 @@ export default function ReferensiPage() {
           Referensi
         </h2>
         <p className="mt-1.5 max-w-[60ch] text-inkSoft">
-          Ringkasan singkat dari beberapa tinjauan dan penelitian tentang
-          terapi musik. Gunakan sebagai titik awal, bukan kutipan lengkap —
-          cek sumber aslinya untuk detail metodologi.
+          Dasar ilmiah penggunaan terapi musik dalam penatalaksanaan nyeri.
         </p>
       </div>
-      <div className="flex flex-col gap-3">
-        {references.map((ref) => (
-          <ReferenceCard key={ref.title} {...ref} />
+      <div className="flex flex-col gap-5">
+        {references.map((paragraf, i) => (
+          <p
+            key={i}
+            className="rounded-2xl border border-line bg-surface p-5 text-[14.5px] leading-relaxed text-inkSoft"
+          >
+            {paragraf}
+          </p>
         ))}
       </div>
     </section>

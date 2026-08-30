@@ -1,11 +1,11 @@
 "use client";
 
-import type { Song } from "@/data/songs";
+import type { Lagu } from "@/lib/api";
 
 type Props = {
-  song: Song;
+  song: Lagu;
   isPlaying: boolean;
-  onToggle: (song: Song) => void;
+  onToggle: () => void;
 };
 
 export default function SongCard({ song, isPlaying, onToggle }: Props) {
@@ -16,12 +16,10 @@ export default function SongCard({ song, isPlaying, onToggle }: Props) {
       }`}
     >
       <button
-        onClick={() => onToggle(song)}
-        aria-label={`Putar ${song.title}`}
-        className={`flex h-11.5 w-11.5 h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-full border border-line text-[15px] transition-colors ${
-          isPlaying
-            ? "bg-teal text-white"
-            : "bg-surfaceSoft text-tealDeep"
+        onClick={onToggle}
+        aria-label={`Putar ${song.nama}`}
+        className={`flex h-[46px] w-[46px] flex-shrink-0 items-center justify-center rounded-full border border-line text-[15px] transition-colors ${
+          isPlaying ? "bg-teal text-white" : "bg-surfaceSoft text-tealDeep"
         }`}
       >
         {isPlaying ? "❚❚" : "▶"}
@@ -29,13 +27,12 @@ export default function SongCard({ song, isPlaying, onToggle }: Props) {
 
       <div className="min-w-0 flex-1">
         <div className="mb-0.5 truncate text-[14.5px] font-semibold text-tealDeep">
-          {song.title}
+          {song.nama}
         </div>
         <div className="flex items-center gap-2 text-xs text-inkSoft">
           <span className="rounded-full bg-surfaceSoft px-2 py-0.5 font-mono text-[10.5px] text-teal">
             {song.genre}
           </span>
-          <span className="font-mono">{song.duration}</span>
         </div>
       </div>
 

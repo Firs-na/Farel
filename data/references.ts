@@ -1,29 +1,7 @@
-export type Reference = {
-  year: string;
-  title: string;
-  source: string;
-  note: string;
-};
+export const references: string[] = [
+  `Dalam penatalaksanaan nyeri akibat kanker serviks, terdapat beberapa pendekatan yang dapat digunakan, salah satunya melalui metode non-farmakologis seperti terapi musik. Pendekatan ini tidak menggunakan obat-obatan, melainkan memanfaatkan unsur suara untuk membantu meredakan nyeri serta meningkatkan kondisi fisik dan psikologis pasien. Terapi musik melibatkan berbagai komponen seperti melodi, ritme, harmoni, struktur lagu, serta jenis musik yang dipilih. Setiap elemen tersebut disusun sedemikian rupa agar mampu memberikan efek positif terhadap keadaan fisik maupun mental pasien (Puspitarini dan Wirotomo, 2021).`,
 
-export const references: Reference[] = [
-  {
-    year: "2013",
-    title:
-      "Music interventions for improving psychological and physical outcomes in cancer patients",
-    source: "Cochrane Database of Systematic Reviews — Bradt, Dileo & Shim",
-    note: "Tinjauan sistematis yang merangkum bukti bahwa musik dapat membantu menurunkan kecemasan, nyeri, dan meningkatkan mood pada pasien kanker.",
-  },
-  {
-    year: "2014",
-    title: "Music interventions for preoperative anxiety",
-    source: "Cochrane Database of Systematic Reviews — Bradt & Dileo",
-    note: "Merangkum studi yang menunjukkan mendengarkan musik sebelum operasi dapat menurunkan tingkat kecemasan dibanding perawatan standar.",
-  },
-  {
-    year: "2015",
-    title:
-      "Music as an aid for postoperative recovery in adults: a systematic review and meta-analysis",
-    source: "The Lancet — Hole, Hirsch, Ball & Meads",
-    note: "Menemukan bahwa musik pascaoperasi berkaitan dengan penurunan rasa nyeri, kecemasan, dan kebutuhan obat pereda nyeri.",
-  },
+  `Nyeri biasanya berasal dari luka setelah operasi, tetapi hal-hal lain juga bisa menyebabkannya. Nyeri yang muncul setelah pembedahan pada fraktur akan berdampak pada sistem endokrin. Ini akan meningkatkan produksi kortisol, katekolamin, dan hormon stres lainnya. Takikardia, peningkatan tekanan darah, perubahan sistem kekebalan, dan hiperglikemia adalah reaksi fisiologis akibat nyeri. Karena nyeri pembedahan meningkatkan risiko trombosis vena dalam, atelectasis paru, mortilitas usus yang lebih rendah, dan retensi urine, pasien takut untuk bergerak. Peran perawat sangat penting untuk mengurangi atau menghilangkan nyeri pasca pembedahan, salah satunya dengan melakukan tindakan farmakologi maupun non farmakologi. Salah satu pengobatan farmakologinya adalah pemberian obat anti-inflamasi nonsteroidal (NSAID). Untuk penatalaksanaan non-farmakologi, contohnya, kompres hangat atau dingin, pijatan, teknik untuk mengalihkan perhatian (seperti mendengarkan musik atau murottal), teknik relaksasi nafas dalam, dan teknik terapi relaksasi Islami (Nur Muhammad Daulay Syukur, Agustina Retno Hapsari, 2022).`,
+
+  `Secara fisiologis, terapi musik dapat merangsang terbentuknya gelombang alfa dan beta di otak melalui rangsangan pendengaran. Gelombang ini berperan dalam menciptakan perasaan rileks dan tenang, sehingga membantu otak menerima rangsangan yang bersifat tenang. Kondisi tersebut diharapkan dapat menurunkan persepsi nyeri yang dirasakan pasien (Puspitarini dan Wirotomo, 2021).`,
 ];
