@@ -1,9 +1,9 @@
 "use client";
 
-import type { Song } from "@/data/songs";
+import type { Lagu } from "@/lib/api";
 
 type Props = {
-  song: Song;
+  song: Lagu;
   isPlaying: boolean;
   onToggle: () => void;
 };
