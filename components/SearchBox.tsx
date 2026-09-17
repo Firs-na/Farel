@@ -7,7 +7,7 @@ type Props = {
 
 export default function SearchBox({ value, onChange }: Props) {
   return (
-    <div className="flex min-w-[220px] flex-1 items-center gap-2 rounded-full border border-line bg-surface px-4.5 py-2.5">
+    <div className="flex min-w-[220px] flex-1 items-center gap-3 rounded-full border border-line bg-surface px-5 py-3">
       <span className="font-mono text-[13px] text-inkSoft">⌕</span>
       <input
         type="text"

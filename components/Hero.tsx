@@ -3,7 +3,7 @@ import BreatheWave from "./BreatheWave";
 
 export default function Hero() {
   return (
-    <div className="grid items-center gap-12 py-10 md:grid-cols-[1.1fr_0.9fr] md:py-14">
+    <div className="grid items-start gap-12 pb-16 pt-4 md:grid-cols-[1.1fr_0.9fr] md:pb-20 md:pt-2">
       <div>
         <span className="mb-3.5 block text-[12.5px] font-semibold uppercase tracking-[0.14em] text-sage">
           Terapi musik · satu tempat, tanpa gangguan
@@ -20,17 +20,17 @@ export default function Hero() {
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/lagu"
-            className="inline-flex items-center gap-2 rounded-full bg-teal px-5.5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:shadow-lg"
-          >
-            Dengarkan musik terapi →
-          </Link>
-          <Link
-            href="/nrs"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5.5 py-3 text-sm font-semibold text-tealDeep transition-colors hover:border-teal"
-          >
-            Cek skala nyeri dulu
-          </Link>
+  href="/lagu"
+  className="inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:shadow-lg"
+>
+  Dengarkan musik terapi →
+</Link>
+<Link
+  href="/nrs"
+  className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-semibold text-tealDeep transition-colors hover:border-teal"
+>
+  Cek skala nyeri dulu
+</Link>
         </div>
       </div>
 

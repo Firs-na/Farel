@@ -48,12 +48,12 @@ export default function SongList({ initialGenre = "Semua" }: Props) {
 
   return (
     <div>
-      <div className="mb-5.5 flex flex-wrap gap-3">
+      <div className="mb-6 flex flex-wrap gap-3">
         <SearchBox value={search} onChange={setSearch} />
       </div>
       <GenreChips genres={genres} active={genre} onChange={setGenre} />
 
-      <div className="mt-5 grid gap-3.5 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
         {filtered.map((song) => (
           <SongCard
             key={song.id}

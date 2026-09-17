@@ -1,9 +1,9 @@
 "use client";
 
-import type { Lagu } from "@/lib/api";
+import type { Song } from "@/data/songs";
 
 type Props = {
-  song: Lagu;
+  song: Song;
   isPlaying: boolean;
   onToggle: () => void;
 };
@@ -29,11 +29,9 @@ export default function SongCard({ song, isPlaying, onToggle }: Props) {
         <div className="mb-0.5 truncate text-[14.5px] font-semibold text-tealDeep">
           {song.nama}
         </div>
-        <div className="flex items-center gap-2 text-xs text-inkSoft">
-          <span className="rounded-full bg-surfaceSoft px-2 py-0.5 font-mono text-[10.5px] text-teal">
-            {song.genre}
-          </span>
-        </div>
+        <span className="rounded-full bg-surfaceSoft px-2 py-0.5 font-mono text-[10.5px] text-teal">
+          {song.genre}
+        </span>
       </div>
 
       <div className="flex h-[18px] w-[30px] flex-shrink-0 items-center gap-[2px]" aria-hidden>

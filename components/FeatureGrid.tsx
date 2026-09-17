@@ -23,8 +23,8 @@ const features = [
 
 export default function FeatureGrid() {
   return (
-    <section className="border-t border-line py-11">
-      <div className="mb-6.5 flex flex-wrap items-end justify-between gap-4">
+    <section className="border-t border-line pb-6 pt-12">
+      <div className="mb-9 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="font-display text-[26px] font-semibold text-tealDeep">
             Semua yang kamu butuhkan, tersusun rapi
@@ -40,13 +40,15 @@ export default function FeatureGrid() {
           <Link
             key={f.href}
             href={f.href}
-            className="rounded-xl2 border border-line bg-surface p-5.5 transition-all hover:-translate-y-1 hover:shadow-lg"
+            className="rounded-xl2 border border-line bg-surface p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             <span className="font-mono text-xs text-sage">{f.num}</span>
-            <h3 className="mb-1.5 mt-2.5 text-[17px] font-semibold text-tealDeep">
+            <h3 className="mb-2 mt-3 text-[17px] font-semibold text-tealDeep">
               {f.title}
             </h3>
-            <p className="text-[13.5px] text-inkSoft">{f.desc}</p>
+            <p className="text-[13.5px] leading-relaxed text-inkSoft">
+              {f.desc}
+            </p>
           </Link>
         ))}
       </div>

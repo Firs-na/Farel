@@ -13,7 +13,7 @@ export default function QnA() {
         return (
           <div
             key={item.q}
-            className="overflow-hidden rounded-2xl border border-line bg-surface"
+            className="overflow-hidden rounded-2xl border border-line bg-surface transition-colors"
           >
             <button
               onClick={() => setOpenIndex(open ? null : i)}
@@ -24,7 +24,7 @@ export default function QnA() {
                 {item.q}
               </span>
               <span
-                className={`flex-shrink-0 font-mono text-lg text-sage transition-transform ${
+                className={`flex-shrink-0 font-mono text-lg text-sage transition-transform duration-300 ${
                   open ? "rotate-45" : ""
                 }`}
                 aria-hidden
@@ -32,11 +32,17 @@ export default function QnA() {
                 +
               </span>
             </button>
-            {open && (
-              <div className="px-5 pb-4 text-[13.5px] leading-relaxed text-inkSoft">
-                {item.a}
+
+            <div
+              className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+              style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+            >
+              <div className="overflow-hidden">
+                <div className="px-5 pb-4 text-[13.5px] leading-relaxed text-inkSoft">
+                  {item.a}
+                </div>
               </div>
-            )}
+            </div>
           </div>
         );
       })}
